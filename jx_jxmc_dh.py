@@ -1,6 +1,6 @@
 """
-cron: 50 59 * * * *
-new Env('财富岛兑换红包');
+cron: 50 59 10,23 * * *
+new Env('惊喜牧场兑换红包');
 """
 import os
 import re
