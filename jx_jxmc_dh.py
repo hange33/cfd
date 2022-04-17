@@ -17,7 +17,7 @@ cfd_start_time = -0.15
 cfd_offset_time = 0.01
 
 # 基础配置勿动
-cfd_url = 'https://m.jingxi.com/jxmc/operservice/ExchangeV2?channel=7&sceneid=1001&activeid=jxmc_active_0001&activekey=null&eid=eidAcffe812237s6uFl6N387QrWZ82DrhGUS3rhZe7doM2iz0rdd7dIcexSkrHpwu%2FY1IzR2DdVHI9bWfIvbd1k34BoeIH6Uh1yWxxksM8J1TEXOwcVs&fp=733ab47a280564bf7731f8085b33062b&dv=5.23.2&do=android&dov=11&dn=GM1910&type=11&token=5704dc54e5588f5b8aa8941860a4e50e&value=1466&jxmc_jstoken=d80e24d412425da33c977892ca624404&timestamp=1649520033869&phoneid=e5a469867a4e59f7&_stk=activeid%2Cactivekey%2Cchannel%2Cdn%2Cdo%2Cdov%2Cdv%2Ceid%2Cfp%2Cjxmc_jstoken%2Cphoneid%2Csceneid%2Ctimestamp%2Ctoken%2Ctype%2Cvalue&_ste=1&h5st=20220410000033903%3B0291573819226684%3B00df8%3Btk02w97e51b6918nPyXI0Z9wPF4eAGu26lulpbnvWKPVWEGVjTpEdgF87AM9rUy5hUGeGIUaaNGy5X99xMOY15CeG8er%3B005ada6bf041480bdbee939670bc807e3b07bedc96ccbcdbc2f0c0aab682a77c%3B3.0%3B1649520033903&_=1649520033904&sceneval=2&g_login_type=1&callback=jsonpCBKO&g_ty=ls'
+cfd_url = ''
 pattern_pin = re.compile(r'pt_pin=([\w\W]*?);')
 pattern_data = re.compile(r'\(([\w\W]*?)\)')
 
