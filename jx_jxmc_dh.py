@@ -56,14 +56,14 @@ def get_cookie():
 # 获取配置参数
 def get_config():
     start_dist = {}
-    start_times = get_envs("JXMC_START_TIME")
+    start_times = get_envs("CFD_START_TIME")
     if len(start_times) >= 1:
         start_dist = start_times[0]
         start_time = float(start_dist.get('value'))
         print('从环境变量中载入时间变量[{}]'.format(start_time))
     else:
         start_time = cfd_start_time
-        u_data = post_envs('JXMC_START_TIME', str(start_time), '财富岛兑换时间配置,自动生成,勿动')
+        u_data = post_envs('CFD_START_TIME', str(start_time), '财富岛兑换时间配置,自动生成,勿动')
         if len(u_data) == 1:
             start_dist = u_data[0]
         print('从默认配置中载入时间变量[{}]'.format(start_time))
@@ -86,31 +86,6 @@ def cfd_qq(def_start_time):
     # 进行json转换
     data = json.loads(re_list.group(1))
     msg = data['message']
-    # 根据返回值判断
-    if data == 0:
-        # 抢到了
-        msg = "可能抢到了"
-        put_envs(u_cookie.get('_id'), u_cookie.get('name'), u_cookie.get('value'), msg)
-        disable_env(u_cookie.get('_id'))
-    elif data == 2016:
-        # 需要减
-        start_time = float(u_start_time) - float(cfd_offset_time)
-        put_envs(u_start_dist.get('_id'), u_start_dist.get('name'), str(start_time)[:8])
-    elif data == 2013:
-        # 需要加
-        start_time = float(u_start_time) + float(cfd_offset_time)
-        put_envs(u_start_dist.get('_id'), u_start_dist.get('name'), str(start_time)[:8])
-    elif data == 1014:
-        # URL过期
-        pass
-    elif data == 2007:
-        # 财富值不够
-        put_envs(u_cookie.get('_id'), u_cookie.get('name'), u_cookie.get('value'), msg)
-        disable_env(u_cookie.get('_id'))
-    elif data == 9999:
-        # 账号过期
-        put_envs(u_cookie.get('_id'), u_cookie.get('name'), u_cookie.get('value'), msg)
-        disable_env(u_cookie.get('_id'))
     print("实际发送[{}]\n耗时[{:.3f}]\n用户[{}]\n结果[{}]".format(d1, (t2 - t1), u_pin, msg))
 
 
